@@ -1,0 +1,1 @@
+aarch64-linux-gnu-strip -s /home/curryking/tenonos_work/tenon-inference/build/tenon-inference_qemu-arm64.dbg -o /home/curryking/tenonos_work/tenon-inference/build/tenon-inference_qemu-arm64 2>&1 | { grep -Ev "Empty loadable segment detected|section.*lma.*adjusted to.*" || true; }

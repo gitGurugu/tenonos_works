@@ -1,0 +1,1 @@
+aarch64-linux-gnu-objcopy --keep-global-symbols=/home/curryking/tenonos_work/tenon/lib/ukthread/exportsyms.uk       /home/curryking/tenonos_work/tenon-inference/build/libukthread.ld.o /home/curryking/tenonos_work/tenon-inference/build/libukthread.o

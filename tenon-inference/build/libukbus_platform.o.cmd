@@ -1,0 +1,1 @@
+aarch64-linux-gnu-objcopy --keep-global-symbols=/home/curryking/tenonos_work/tenon/drivers/ukbus/platform/exportsyms.uk       /home/curryking/tenonos_work/tenon-inference/build/libukbus_platform.ld.o /home/curryking/tenonos_work/tenon-inference/build/libukbus_platform.o

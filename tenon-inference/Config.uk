@@ -1,0 +1,122 @@
+### Invisible option for dependencies
+config APPINFERENCE_DEPENDENCIES
+	bool
+	default y
+	select LIBNOLIBC if !HAVE_LIBC
+
+### Inference Framework Configuration
+
+config APPINFERENCE
+	bool "TenonOS Inference Framework"
+	default y
+	select LIBUKALLOC
+	select LIBUKSCHED
+	help
+	  Lightweight inference framework for TenonOS
+
+if APPINFERENCE
+
+config APPINFERENCE_THREAD_COUNT
+	int "Worker thread count"
+	default 4
+	range 1 32
+	help
+	  Number of inference worker threads
+
+config APPINFERENCE_QUEUE_SIZE
+	int "Request queue size"
+	default 256
+	range 16 4096
+	help
+	  Maximum number of pending inference requests
+
+config APPINFERENCE_BATCH_ENABLED
+	bool "Enable batch processing"
+	default y
+	help
+	  Enable batching multiple requests together
+
+config APPINFERENCE_BATCH_MAX_SIZE
+	int "Maximum batch size"
+	default 8
+	depends on APPINFERENCE_BATCH_ENABLED
+	range 1 64
+	help
+	  Maximum number of requests in one batch
+
+config APPINFERENCE_BATCH_TIMEOUT_US
+	int "Batch timeout (microseconds)"
+	default 1000
+	depends on APPINFERENCE_BATCH_ENABLED
+	range 100 100000
+	help
+	  Maximum time to wait for batch to fill
+
+config APPINFERENCE_ENABLE_PREEMPTIVE
+	bool "Enable preemptive scheduling"
+	default y
+	select LIBTNSCHEDPRIO
+	help
+	  Enable priority-based preemptive scheduling
+
+config APPINFERENCE_SNAPSHOT
+	bool "Enable snapshot optimization"
+	default n
+	help
+	  Enable snapshot to reduce first request latency
+
+config APPINFERENCE_SNAPSHOT_PATH
+	string "Snapshot file path"
+	default "/snapshot"
+	depends on APPINFERENCE_SNAPSHOT
+	help
+	  Path to save/load snapshot
+
+config APPINFERENCE_METRICS
+	bool "Enable metrics collection"
+	default y
+	help
+	  Collect QPS, latency percentiles, CPU/memory usage
+
+config APPINFERENCE_TRACE
+	bool "Enable lightweight tracing"
+	default n
+	help
+	  Enable tracing with <5% overhead
+
+config APPINFERENCE_LOG_LEVEL
+	int "Log level (0=ERROR, 1=WARN, 2=INFO, 3=DEBUG)"
+	default 2
+	range 0 3
+	help
+	  Set logging verbosity level
+
+config APPINFERENCE_MODEL_PATH
+	string "Default model path"
+	default "/models"
+	help
+	  Default directory to load models from
+
+config APPINFERENCE_MAX_MODEL_SIZE
+	int "Maximum model size (MB)"
+	default 512
+	range 1 4096
+	help
+	  Maximum memory allowed for a single model
+
+config APPINFERENCE_ENABLE_MULTI_MODEL
+	bool "Enable multi-model support"
+	default y
+	help
+	  Allow multiple models loaded simultaneously
+
+config APPINFERENCE_MODEL_MEM_LIMIT
+	int "Total model memory limit (MB)"
+	default 128
+	depends on APPINFERENCE_ENABLE_MULTI_MODEL
+	range 64 8192
+	help
+	  Maximum memory for all loaded models
+
+endif
+

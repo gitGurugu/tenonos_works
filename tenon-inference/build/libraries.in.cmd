@@ -1,0 +1,1 @@
+cmp -s /home/curryking/tenonos_work/tenon-inference/build/libuklibid/libraries.in.new /home/curryking/tenonos_work/tenon-inference/build/libuklibid/libraries.in; if [ $? -ne 0 ]; then cp /home/curryking/tenonos_work/tenon-inference/build/libuklibid/libraries.in.new /home/curryking/tenonos_work/tenon-inference/build/libuklibid/libraries.in; fi

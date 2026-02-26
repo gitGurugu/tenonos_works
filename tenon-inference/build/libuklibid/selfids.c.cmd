@@ -1,0 +1,1 @@
+gawk --lint -f /home/curryking/tenonos_work/tenon/lib/uklibid/selfids.awk        /home/curryking/tenonos_work/tenon-inference/build/libuklibid/libraries.in > /home/curryking/tenonos_work/tenon-inference/build/libuklibid/selfids.c

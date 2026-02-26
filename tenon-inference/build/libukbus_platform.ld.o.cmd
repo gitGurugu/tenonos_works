@@ -1,0 +1,1 @@
+aarch64-linux-gnu-gcc -nostdlib -Wl,-r -Wl,-d -Wl,--build-id=none -no-pie -nostdinc    /home/curryking/tenonos_work/tenon-inference/build/libukbus_platform/platform_bus.o /home/curryking/tenonos_work/tenon-inference/build/libukbus_platform/libinfo.libuklibid.o   -Wl,--start-group     -Wl,--end-group -o /home/curryking/tenonos_work/tenon-inference/build/libukbus_platform.ld.o

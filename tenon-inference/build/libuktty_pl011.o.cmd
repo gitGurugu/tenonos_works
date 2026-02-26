@@ -1,0 +1,1 @@
+aarch64-linux-gnu-objcopy --keep-global-symbols=/home/curryking/tenonos_work/tenon/drivers/uktty/pl011/exportsyms.uk       /home/curryking/tenonos_work/tenon-inference/build/libuktty_pl011.ld.o /home/curryking/tenonos_work/tenon-inference/build/libuktty_pl011.o

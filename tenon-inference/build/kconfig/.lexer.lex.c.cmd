@@ -1,1 +1,1 @@
-cmd_/home/curryking/tenonos_work/tenon-inference/build/kconfig/lexer.lex.c := 
+cmd_/root/tenonos_works/tenon-inference/build/kconfig/lexer.lex.c := 

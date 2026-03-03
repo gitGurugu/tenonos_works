@@ -1,1 +1,1 @@
-aarch64-linux-gnu-objcopy --keep-global-symbols=/home/curryking/tenonos_work/tenon/lib/fdt/exportsyms.uk       /home/curryking/tenonos_work/tenon-inference/build/libfdt.ld.o /home/curryking/tenonos_work/tenon-inference/build/libfdt.o
+aarch64-linux-gnu-objcopy --keep-global-symbols=/root/tenonos_works/tenon/lib/fdt/exportsyms.uk       /root/tenonos_works/tenon-inference/build/libfdt.ld.o /root/tenonos_works/tenon-inference/build/libfdt.o

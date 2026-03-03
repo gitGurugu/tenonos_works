@@ -1,8 +1,8 @@
-cmd_/home/curryking/tenonos_work/tenon-inference/build/kconfig/confdata.o := 
+cmd_/root/tenonos_works/tenon-inference/build/kconfig/confdata.o := 
 
-source_/home/curryking/tenonos_work/tenon-inference/build/kconfig/confdata.o := confdata.c
+source_/root/tenonos_works/tenon-inference/build/kconfig/confdata.o := confdata.c
 
-deps_/home/curryking/tenonos_work/tenon-inference/build/kconfig/confdata.o := \
+deps_/root/tenonos_works/tenon-inference/build/kconfig/confdata.o := \
     $(wildcard include/config/foo.h) \
     $(wildcard include/config/xxx.h) \
   /usr/include/stdc-predef.h \
@@ -108,6 +108,6 @@ deps_/home/curryking/tenonos_work/tenon-inference/build/kconfig/confdata.o := \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
   lkc_proto.h \
 
-/home/curryking/tenonos_work/tenon-inference/build/kconfig/confdata.o: $(deps_/home/curryking/tenonos_work/tenon-inference/build/kconfig/confdata.o)
+/root/tenonos_works/tenon-inference/build/kconfig/confdata.o: $(deps_/root/tenonos_works/tenon-inference/build/kconfig/confdata.o)
 
-$(deps_/home/curryking/tenonos_work/tenon-inference/build/kconfig/confdata.o):
+$(deps_/root/tenonos_works/tenon-inference/build/kconfig/confdata.o):

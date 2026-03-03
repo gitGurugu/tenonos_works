@@ -1,1 +1,1 @@
-aarch64-linux-gnu-objcopy --keep-global-symbols=/home/curryking/tenonos_work/tenon/lib/ukalloc/exportsyms.uk       /home/curryking/tenonos_work/tenon-inference/build/libukalloc.ld.o /home/curryking/tenonos_work/tenon-inference/build/libukalloc.o
+aarch64-linux-gnu-objcopy --keep-global-symbols=/root/tenonos_works/tenon/lib/ukalloc/exportsyms.uk       /root/tenonos_works/tenon-inference/build/libukalloc.ld.o /root/tenonos_works/tenon-inference/build/libukalloc.o

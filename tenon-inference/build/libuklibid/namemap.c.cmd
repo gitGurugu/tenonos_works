@@ -1,1 +1,1 @@
-gawk --lint -f /home/curryking/tenonos_work/tenon/lib/uklibid/namemap.awk        /home/curryking/tenonos_work/tenon-inference/build/libuklibid/libraries.in > /home/curryking/tenonos_work/tenon-inference/build/libuklibid/namemap.c
+gawk --lint -f /root/tenonos_works/tenon/lib/uklibid/namemap.awk        /root/tenonos_works/tenon-inference/build/libuklibid/libraries.in > /root/tenonos_works/tenon-inference/build/libuklibid/namemap.c

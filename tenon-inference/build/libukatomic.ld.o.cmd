@@ -1,1 +1,1 @@
-aarch64-linux-gnu-gcc -nostdlib -Wl,-r -Wl,-d -Wl,--build-id=none -no-pie -nostdinc    /home/curryking/tenonos_work/tenon-inference/build/libukatomic/libinfo.libuklibid.o   -Wl,--start-group     -Wl,--end-group -o /home/curryking/tenonos_work/tenon-inference/build/libukatomic.ld.o
+aarch64-linux-gnu-gcc -nostdlib -Wl,-r -Wl,-d -Wl,--build-id=none -no-pie -nostdinc    /root/tenonos_works/tenon-inference/build/libukatomic/libinfo.libuklibid.o   -Wl,--start-group     -Wl,--end-group -o /root/tenonos_works/tenon-inference/build/libukatomic.ld.o

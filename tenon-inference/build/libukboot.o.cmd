@@ -1,1 +1,1 @@
-aarch64-linux-gnu-objcopy --keep-global-symbols=/home/curryking/tenonos_work/tenon/lib/ukboot/exportsyms.uk       /home/curryking/tenonos_work/tenon-inference/build/libukboot.ld.o /home/curryking/tenonos_work/tenon-inference/build/libukboot.o
+aarch64-linux-gnu-objcopy --keep-global-symbols=/root/tenonos_works/tenon/lib/ukboot/exportsyms.uk       /root/tenonos_works/tenon-inference/build/libukboot.ld.o /root/tenonos_works/tenon-inference/build/libukboot.o

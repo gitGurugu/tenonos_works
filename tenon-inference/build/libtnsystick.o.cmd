@@ -1,1 +1,1 @@
-aarch64-linux-gnu-objcopy --keep-global-symbols=/home/curryking/tenonos_work/tenon/lib/tnsystick/exportsyms.uk       /home/curryking/tenonos_work/tenon-inference/build/libtnsystick.ld.o /home/curryking/tenonos_work/tenon-inference/build/libtnsystick.o
+aarch64-linux-gnu-objcopy --keep-global-symbols=/root/tenonos_works/tenon/lib/tnsystick/exportsyms.uk       /root/tenonos_works/tenon-inference/build/libtnsystick.ld.o /root/tenonos_works/tenon-inference/build/libtnsystick.o

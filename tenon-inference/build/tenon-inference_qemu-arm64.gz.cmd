@@ -1,1 +1,1 @@
-gzip -f -9 -c /home/curryking/tenonos_work/tenon-inference/build/tenon-inference_qemu-arm64 >/home/curryking/tenonos_work/tenon-inference/build/tenon-inference_qemu-arm64.gz
+gzip -f -9 -c /root/tenonos_works/tenon-inference/build/tenon-inference_qemu-arm64 >/root/tenonos_works/tenon-inference/build/tenon-inference_qemu-arm64.gz

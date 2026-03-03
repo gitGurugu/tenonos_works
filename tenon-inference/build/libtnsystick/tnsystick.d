@@ -1,81 +1,84 @@
-cmd_/home/curryking/tenonos_work/tenon-inference/build/libtnsystick/tnsystick.o := /bin/bash /home/curryking/tenonos_work/tenon-inference/build/libtnsystick/tnsystick.o.cmd
+cmd_/root/tenonos_works/tenon-inference/build/libtnsystick/tnsystick.o := /bin/bash /root/tenonos_works/tenon-inference/build/libtnsystick/tnsystick.o.cmd
 
-source_/home/curryking/tenonos_work/tenon-inference/build/libtnsystick/tnsystick.o := /home/curryking/tenonos_work/tenon/lib/tnsystick/tnsystick.c
+source_/root/tenonos_works/tenon-inference/build/libtnsystick/tnsystick.o := /root/tenonos_works/tenon/lib/tnsystick/tnsystick.c
 
-deps_/home/curryking/tenonos_work/tenon-inference/build/libtnsystick/tnsystick.o := \
+deps_/root/tenonos_works/tenon-inference/build/libtnsystick/tnsystick.o := \
     $(wildcard include/config/libtnsystick/tickless.h) \
     $(wildcard include/config/libtnsystick/freq.h) \
-  /home/curryking/tenonos_work/tenon/lib/tnsystick/include/tn/systick.h \
-  /home/curryking/tenonos_work/tenon/lib/nolibc/include/stdint.h \
-  /home/curryking/tenonos_work/tenon/include/uk/arch/types.h \
-  /home/curryking/tenonos_work/tenon/arch/arm/arm64/include/uk/asm/intsizes.h \
-  /home/curryking/tenonos_work/tenon/arch/arm/arm64/include/uk/asm/types.h \
-  /home/curryking/tenonos_work/tenon/include/uk/arch/limits.h \
-  /home/curryking/tenonos_work/tenon/include/uk/config.h \
-  /home/curryking/tenonos_work/tenon/arch/arm/arm64/include/uk/asm/limits.h \
-    $(wildcard include/config/stack/size/page/order.h) \
-    $(wildcard include/config/cpu/except/stack/size/page/order.h) \
-  /home/curryking/tenonos_work/tenon/lib/ukintctlr/include/uk/intctlr.h \
+  /root/tenonos_works/tenon/lib/tnsystick/include/tn/systick.h \
+  /root/tenonos_works/tenon-inference/build/libmusl/include/dirent/include/stdint.h \
+  /root/tenonos_works/tenon-inference/build/libmusl/origin/musl-1.2.3//arch/aarch64/bits/alltypes.h \
+  /root/tenonos_works/tenon-inference/build/libmusl/origin/musl-1.2.3//arch/aarch64/bits/stdint.h \
+  /root/tenonos_works/tenon/lib/ukintctlr/include/uk/intctlr.h \
     $(wildcard include/config/libukintctlr/test.h) \
     $(wildcard include/config/libuktest/all.h) \
-  /home/curryking/tenonos_work/tenon/lib/nolibc/include/stdbool.h \
-  /home/curryking/tenonos_work/tenon/lib/ukalloc/include/uk/alloc.h \
+  /root/tenonos_works/tenon-inference/build/libmusl/include/core/include/stdbool.h \
+  /root/tenonos_works/tenon/lib/ukalloc/include/uk/alloc.h \
     $(wildcard include/config/libukalloc/ifstats.h) \
     $(wildcard include/config/libukalloc/ifmalloc.h) \
     $(wildcard include/config/libukalloc/ifstats/perlib.h) \
     $(wildcard include/config/libukalloc/ifstats/global.h) \
-  /home/curryking/tenonos_work/tenon/lib/ukdebug/include/uk/assert.h \
+  /root/tenonos_works/tenon/include/uk/arch/types.h \
+  /root/tenonos_works/tenon/arch/arm/arm64/include/uk/asm/intsizes.h \
+  /root/tenonos_works/tenon/arch/arm/arm64/include/uk/asm/types.h \
+  /root/tenonos_works/tenon/include/uk/config.h \
+  /root/tenonos_works/tenon/lib/ukdebug/include/uk/assert.h \
     $(wildcard include/config/libukdebug/enable/assert.h) \
-  /home/curryking/tenonos_work/tenon/include/uk/plat/bootstrap.h \
-  /home/curryking/tenonos_work/tenon/include/uk/essentials.h \
+  /root/tenonos_works/tenon/include/uk/plat/bootstrap.h \
+  /root/tenonos_works/tenon/include/uk/essentials.h \
     $(wildcard include/config/libnewlibc.h) \
     $(wildcard include/config/have/sched.h) \
-  /home/curryking/tenonos_work/tenon/include/uk/compiler.h \
-  /home/curryking/tenonos_work/tenon/arch/arm/arm64/include/uk/asm/compiler.h \
+  /root/tenonos_works/tenon/include/uk/compiler.h \
+  /root/tenonos_works/tenon/arch/arm/arm64/include/uk/asm/compiler.h \
     $(wildcard include/config/arm64/feat/pauth.h) \
     $(wildcard include/config/arm64/feat/bti.h) \
-  /home/curryking/tenonos_work/tenon/include/uk/arch/lcpu.h \
-  /home/curryking/tenonos_work/tenon/arch/arm/arm64/include/uk/asm/lcpu.h \
+  /root/tenonos_works/tenon/include/uk/arch/lcpu.h \
+  /root/tenonos_works/tenon/arch/arm/arm64/include/uk/asm/lcpu.h \
     $(wildcard include/config/arm64/feat/mte.h) \
     $(wildcard include/config/paging.h) \
-  /home/curryking/tenonos_work/tenon/include/uk/asm.h \
-  /home/curryking/tenonos_work/tenon/arch/arm/arm64/include/uk/asm/arch.h \
-  /home/curryking/tenonos_work/tenon/lib/ukdebug/include/uk/print.h \
+  /root/tenonos_works/tenon/include/uk/asm.h \
+  /root/tenonos_works/tenon/arch/arm/arm64/include/uk/asm/arch.h \
+  /root/tenonos_works/tenon/lib/ukdebug/include/uk/print.h \
     $(wildcard include/config/libukdebug/printd.h) \
     $(wildcard include/config/libukdebug/printk/crit.h) \
     $(wildcard include/config/libukdebug/printk/err.h) \
     $(wildcard include/config/libukdebug/printk/warn.h) \
     $(wildcard include/config/libukdebug/printk/info.h) \
     $(wildcard include/config/libukdebug/printk.h) \
-  /home/curryking/tenonos_work/tenon/lib/nolibc/include/stdarg.h \
-  /home/curryking/tenonos_work/tenon/lib/uklibid/include/uk/libid.h \
+  /root/tenonos_works/tenon-inference/build/libmusl/include/mq/include/stdarg.h \
+  /root/tenonos_works/tenon/lib/uklibid/include/uk/libid.h \
     $(wildcard include/config/have/libc.h) \
     $(wildcard include/config/libnolibc.h) \
-  /home/curryking/tenonos_work/tenon-inference/build/libuklibid/include/uk/bits/libid.h \
-  /home/curryking/tenonos_work/tenon/lib/nolibc/include/errno.h \
-  /home/curryking/tenonos_work/tenon/include/uk/plat/lcpu.h \
+  /root/tenonos_works/tenon/include/uk/arch/limits.h \
+  /root/tenonos_works/tenon/arch/arm/arm64/include/uk/asm/limits.h \
+    $(wildcard include/config/stack/size/page/order.h) \
+    $(wildcard include/config/cpu/except/stack/size/page/order.h) \
+  /root/tenonos_works/tenon-inference/build/libuklibid/include/uk/bits/libid.h \
+  /root/tenonos_works/tenon-inference/build/libmusl/include/mq/include/errno.h \
+  /root/tenonos_works/tenon-inference/build/libmusl/include/core/include/features.h \
+  /root/tenonos_works/tenon-inference/build/libmusl/origin/musl-1.2.3//arch/generic/bits/errno.h \
+  /root/tenonos_works/tenon/include/uk/plat/lcpu.h \
     $(wildcard include/config/have/smp.h) \
     $(wildcard include/config/ukplat/lcpu/maxcount.h) \
-  /home/curryking/tenonos_work/tenon/include/uk/arch/time.h \
-  /home/curryking/tenonos_work/tenon/include/uk/plat/offset.h \
-  /home/curryking/tenonos_work/tenon/include/uk/plat/spinlock.h \
-  /home/curryking/tenonos_work/tenon/include/uk/arch/spinlock.h \
-  /home/curryking/tenonos_work/tenon/include/uk/list.h \
-  /home/curryking/tenonos_work/tenon/lib/ukatomic/include/uk/atomic.h \
-  /home/curryking/tenonos_work/tenon/lib/nolibc/include/stddef.h \
-  /home/curryking/tenonos_work/tenon/lib/nolibc/include/nolibc-internal/shareddefs.h \
-  /home/curryking/tenonos_work/tenon/include/uk/compat_list.h \
-  /home/curryking/tenonos_work/tenon/drivers/tnsysclock/include/tn/sysclock.h \
-  /home/curryking/tenonos_work/tenon/lib/tnsystick/include/tn/systick_impl.h \
-  /home/curryking/tenonos_work/tenon/lib/tntimer/include/tn/timer.h \
-  /home/curryking/tenonos_work/tenon/plat/common/include/uk/plat/common/cpu.h \
-  /home/curryking/tenonos_work/tenon/plat/common/include/arm/cpu.h \
-  /home/curryking/tenonos_work/tenon/plat/common/include/arm/arm64/cpu.h \
+  /root/tenonos_works/tenon/include/uk/arch/time.h \
+  /root/tenonos_works/tenon/include/uk/plat/offset.h \
+  /root/tenonos_works/tenon/include/uk/plat/spinlock.h \
+  /root/tenonos_works/tenon/include/uk/arch/spinlock.h \
+  /root/tenonos_works/tenon/include/uk/list.h \
+  /root/tenonos_works/tenon/lib/ukatomic/include/uk/atomic.h \
+  /root/tenonos_works/tenon-inference/build/libmusl/include/dirent/include/stddef.h \
+  /root/tenonos_works/tenon/include/uk/compat_list.h \
+  /root/tenonos_works/tenon/drivers/tnsysclock/include/tn/sysclock.h \
+  /root/tenonos_works/tenon/lib/tnsystick/include/tn/systick_impl.h \
+  /root/tenonos_works/tenon/lib/tntimer/include/tn/timer.h \
+  /root/tenonos_works/tenon/plat/common/include/uk/plat/common/cpu.h \
+  /root/tenonos_works/tenon/plat/common/include/arm/cpu.h \
+  /root/tenonos_works/tenon/plat/common/include/arm/arm64/cpu.h \
     $(wildcard include/config/fpsimd.h) \
-  /home/curryking/tenonos_work/tenon/lib/nolibc/include/inttypes.h \
-  /home/curryking/tenonos_work/tenon/plat/common/include/arm/smccc.h \
+  /root/tenonos_works/tenon-inference/build/libmusl/include/stdlib/include/inttypes.h \
+  /root/tenonos_works/tenon/plat/common/include/arm/smccc.h \
     $(wildcard include/config/arch/arm/64.h) \
 
-/home/curryking/tenonos_work/tenon-inference/build/libtnsystick/tnsystick.o: $(deps_/home/curryking/tenonos_work/tenon-inference/build/libtnsystick/tnsystick.o)
+/root/tenonos_works/tenon-inference/build/libtnsystick/tnsystick.o: $(deps_/root/tenonos_works/tenon-inference/build/libtnsystick/tnsystick.o)
 
-$(deps_/home/curryking/tenonos_work/tenon-inference/build/libtnsystick/tnsystick.o):
+$(deps_/root/tenonos_works/tenon-inference/build/libtnsystick/tnsystick.o):

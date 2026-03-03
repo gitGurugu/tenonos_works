@@ -1,8 +1,8 @@
-cmd_/home/curryking/tenonos_work/tenon-inference/build/libukthread/libinfo.libuklibid.o := /bin/bash /home/curryking/tenonos_work/tenon-inference/build/libukthread/libinfo.libuklibid.o.cmd
+cmd_/root/tenonos_works/tenon-inference/build/libukthread/libinfo.libuklibid.o := /bin/bash /root/tenonos_works/tenon-inference/build/libukthread/libinfo.libuklibid.o.cmd
 
-source_/home/curryking/tenonos_work/tenon-inference/build/libukthread/libinfo.libuklibid.o := /home/curryking/tenonos_work/tenon/lib/uklibid/libinfo.S
+source_/root/tenonos_works/tenon-inference/build/libukthread/libinfo.libuklibid.o := /root/tenonos_works/tenon/lib/uklibid/libinfo.S
 
-deps_/home/curryking/tenonos_work/tenon-inference/build/libukthread/libinfo.libuklibid.o := \
+deps_/root/tenonos_works/tenon-inference/build/libukthread/libinfo.libuklibid.o := \
     $(wildcard include/config/libuklibid/info/ukfullversion.h) \
     $(wildcard include/config/libuklibid/info/ukcodename.h) \
     $(wildcard include/config/libuklibid/info/compiler.h) \
@@ -21,15 +21,15 @@ deps_/home/curryking/tenonos_work/tenon-inference/build/libukthread/libinfo.libu
     $(wildcard include/config/libuklibid/info/compiledby/custom/text.h) \
     $(wildcard include/config/libuklibid/info/compiledbyassoc.h) \
     $(wildcard include/config/libuklibid/info/compiledbyassoc/text.h) \
-  /home/curryking/tenonos_work/tenon/include/uk/config.h \
-  /home/curryking/tenonos_work/tenon/lib/uklibid/include/uk/libid/info.h \
-  /home/curryking/tenonos_work/tenon/include/uk/arch/types.h \
-  /home/curryking/tenonos_work/tenon/arch/arm/arm64/include/uk/asm/intsizes.h \
-  /home/curryking/tenonos_work/tenon/arch/arm/arm64/include/uk/asm/types.h \
-  /home/curryking/tenonos_work/tenon/include/uk/essentials.h \
+  /root/tenonos_works/tenon/include/uk/config.h \
+  /root/tenonos_works/tenon/lib/uklibid/include/uk/libid/info.h \
+  /root/tenonos_works/tenon/include/uk/arch/types.h \
+  /root/tenonos_works/tenon/arch/arm/arm64/include/uk/asm/intsizes.h \
+  /root/tenonos_works/tenon/arch/arm/arm64/include/uk/asm/types.h \
+  /root/tenonos_works/tenon/include/uk/essentials.h \
     $(wildcard include/config/libnewlibc.h) \
     $(wildcard include/config/have/sched.h) \
 
-/home/curryking/tenonos_work/tenon-inference/build/libukthread/libinfo.libuklibid.o: $(deps_/home/curryking/tenonos_work/tenon-inference/build/libukthread/libinfo.libuklibid.o)
+/root/tenonos_works/tenon-inference/build/libukthread/libinfo.libuklibid.o: $(deps_/root/tenonos_works/tenon-inference/build/libukthread/libinfo.libuklibid.o)
 
-$(deps_/home/curryking/tenonos_work/tenon-inference/build/libukthread/libinfo.libuklibid.o):
+$(deps_/root/tenonos_works/tenon-inference/build/libukthread/libinfo.libuklibid.o):

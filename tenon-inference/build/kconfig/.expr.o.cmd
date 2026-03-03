@@ -1,8 +1,8 @@
-cmd_/home/curryking/tenonos_work/tenon-inference/build/kconfig/expr.o := 
+cmd_/root/tenonos_works/tenon-inference/build/kconfig/expr.o := 
 
-source_/home/curryking/tenonos_work/tenon-inference/build/kconfig/expr.o := expr.c
+source_/root/tenonos_works/tenon-inference/build/kconfig/expr.o := expr.c
 
-deps_/home/curryking/tenonos_work/tenon-inference/build/kconfig/expr.o := \
+deps_/root/tenonos_works/tenon-inference/build/kconfig/expr.o := \
   /usr/include/stdc-predef.h \
   /usr/include/ctype.h \
   /usr/include/features.h \
@@ -75,6 +75,6 @@ deps_/home/curryking/tenonos_work/tenon-inference/build/kconfig/expr.o := \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
   lkc_proto.h \
 
-/home/curryking/tenonos_work/tenon-inference/build/kconfig/expr.o: $(deps_/home/curryking/tenonos_work/tenon-inference/build/kconfig/expr.o)
+/root/tenonos_works/tenon-inference/build/kconfig/expr.o: $(deps_/root/tenonos_works/tenon-inference/build/kconfig/expr.o)
 
-$(deps_/home/curryking/tenonos_work/tenon-inference/build/kconfig/expr.o):
+$(deps_/root/tenonos_works/tenon-inference/build/kconfig/expr.o):

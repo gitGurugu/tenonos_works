@@ -1,4 +1,4 @@
 # Auto generated file. DO NOT EDIT
-source "/home/curryking/tenonos_work/tenon/drivers/ukintctlr/bcm_intc/Config.uk"
-source "/home/curryking/tenonos_work/tenon/drivers/ukintctlr/gic/Config.uk"
-source "/home/curryking/tenonos_work/tenon/drivers/ukintctlr/xpic/Config.uk"
+source "/root/tenonos_works/tenon/drivers/ukintctlr/bcm_intc/Config.uk"
+source "/root/tenonos_works/tenon/drivers/ukintctlr/gic/Config.uk"
+source "/root/tenonos_works/tenon/drivers/ukintctlr/xpic/Config.uk"

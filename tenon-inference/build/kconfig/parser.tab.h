@@ -35,8 +35,8 @@
    especially those whose name start with YY_ or yy_.  They are
    private implementation details that can be changed or removed.  */
 
-#ifndef YY_YY_HOME_CURRYKING_TENONOS_WORK_TENON_INFERENCE_BUILD_KCONFIG_PARSER_TAB_H_INCLUDED
-# define YY_YY_HOME_CURRYKING_TENONOS_WORK_TENON_INFERENCE_BUILD_KCONFIG_PARSER_TAB_H_INCLUDED
+#ifndef YY_YY_ROOT_TENONOS_WORKS_TENON_INFERENCE_BUILD_KCONFIG_PARSER_TAB_H_INCLUDED
+# define YY_YY_ROOT_TENONOS_WORKS_TENON_INFERENCE_BUILD_KCONFIG_PARSER_TAB_H_INCLUDED
 /* Debug traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 1
@@ -107,6 +107,61 @@ extern int yydebug;
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
+/* Token kinds.  */
+#define YYEMPTY -2
+#define YYEOF 0
+#define YYerror 256
+#define YYUNDEF 257
+#define T_HELPTEXT 258
+#define T_WORD 259
+#define T_WORD_QUOTE 260
+#define T_ALLNOCONFIG_Y 261
+#define T_BOOL 262
+#define T_CHOICE 263
+#define T_CLOSE_PAREN 264
+#define T_COLON_EQUAL 265
+#define T_COMMENT 266
+#define T_CONFIG 267
+#define T_DEFAULT 268
+#define T_DEFCONFIG_LIST 269
+#define T_DEF_BOOL 270
+#define T_DEF_TRISTATE 271
+#define T_DEPENDS 272
+#define T_ENDCHOICE 273
+#define T_ENDIF 274
+#define T_ENDMENU 275
+#define T_HELP 276
+#define T_HEX 277
+#define T_IF 278
+#define T_IMPLY 279
+#define T_INT 280
+#define T_MAINMENU 281
+#define T_MENU 282
+#define T_MENUCONFIG 283
+#define T_MODULES 284
+#define T_ON 285
+#define T_OPEN_PAREN 286
+#define T_OPTION 287
+#define T_OPTIONAL 288
+#define T_PLUS_EQUAL 289
+#define T_PROMPT 290
+#define T_RANGE 291
+#define T_SELECT 292
+#define T_SOURCE 293
+#define T_STRING 294
+#define T_TRISTATE 295
+#define T_VISIBLE 296
+#define T_EOL 297
+#define T_ASSIGN_VAL 298
+#define T_OR 299
+#define T_AND 300
+#define T_EQUAL 301
+#define T_UNEQUAL 302
+#define T_LESS 303
+#define T_LESS_EQUAL 304
+#define T_GREATER 305
+#define T_GREATER_EQUAL 306
+#define T_NOT 307
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
@@ -134,4 +189,4 @@ extern YYSTYPE yylval;
 int yyparse (void);
 
 
-#endif /* !YY_YY_HOME_CURRYKING_TENONOS_WORK_TENON_INFERENCE_BUILD_KCONFIG_PARSER_TAB_H_INCLUDED  */
+#endif /* !YY_YY_ROOT_TENONOS_WORKS_TENON_INFERENCE_BUILD_KCONFIG_PARSER_TAB_H_INCLUDED  */

@@ -1,1 +1,1 @@
-aarch64-linux-gnu-objcopy --keep-global-symbols=/home/curryking/tenonos_work/tenon/drivers/tnsysclock/exportsyms.uk       /home/curryking/tenonos_work/tenon-inference/build/libtnsysclock.ld.o /home/curryking/tenonos_work/tenon-inference/build/libtnsysclock.o
+aarch64-linux-gnu-objcopy --keep-global-symbols=/root/tenonos_works/tenon/drivers/tnsysclock/exportsyms.uk       /root/tenonos_works/tenon-inference/build/libtnsysclock.ld.o /root/tenonos_works/tenon-inference/build/libtnsysclock.o

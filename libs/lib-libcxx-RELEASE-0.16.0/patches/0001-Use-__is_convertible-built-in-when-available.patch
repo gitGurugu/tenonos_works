@@ -1,0 +1,24 @@
+diff --git a/libcxx/include/type_traits b/libcxx/include/type_traits
+index 3391999675..ab126d000d 100644
+--- a/include/type_traits
++++ b/include/type_traits
+@@ -1659,11 +1659,18 @@ struct __is_core_convertible<_Tp, _Up, decltype(
+ 
+ // is_convertible
+ 
+-#if __has_feature(is_convertible_to) && !defined(_LIBCPP_USE_IS_CONVERTIBLE_FALLBACK)
++#if __has_builtin(__is_convertible) && !defined(_LIBCPP_USE_IS_CONVERTIBLE_FALLBACK)
++
++template <class _T1, class _T2>
++struct _LIBCPP_TEMPLATE_VIS is_convertible : public integral_constant<bool, __is_convertible(_T1, _T2)> {};
++
++#elif __has_feature(is_convertible_to) && !defined(_LIBCPP_USE_IS_CONVERTIBLE_FALLBACK)
+ 
+ template <class _T1, class _T2> struct _LIBCPP_TEMPLATE_VIS is_convertible
+     : public integral_constant<bool, __is_convertible_to(_T1, _T2)> {};
+ 
++// TODO: Remove this fallback when GCC < 13 support is no longer required.
++// GCC 13 has the __is_convertible built-in.
+ #else  // __has_feature(is_convertible_to)
+ 
+ namespace __is_convertible_imp

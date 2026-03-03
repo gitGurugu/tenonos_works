@@ -1,1 +1,1 @@
-aarch64-linux-gnu-objcopy        /home/curryking/tenonos_work/tenon-inference/build/libukatomic.ld.o /home/curryking/tenonos_work/tenon-inference/build/libukatomic.o
+aarch64-linux-gnu-objcopy        /root/tenonos_works/tenon-inference/build/libukatomic.ld.o /root/tenonos_works/tenon-inference/build/libukatomic.o

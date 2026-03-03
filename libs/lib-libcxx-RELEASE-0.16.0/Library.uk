@@ -1,0 +1,5 @@
+name        := "libcxx"
+description := "An LLVM project which provides a new implementation of the C++ standard library, targeting C++11 and above."
+homepage    := "https://libcxx.llvm.org/"
+version     := 14.0.6 sha256:f7a9865e25a6c5175549e31609605767bf3478e8cdf8428be2c911838e7b683d https://github.com/llvm/llvm-project/releases/download/llvmorg-14.0.6/libcxx-14.0.6.src.tar.xz
+license     := "Apache-2.0-with-LLVM-exception"

@@ -35,7 +35,7 @@ import pickle
 import os, sys
 import tempfile, shutil
 
-scripts_dir = "/home/curryking/tenonos_work/tenon/support/scripts"
+scripts_dir = "/root/tenonos_works/tenon/support/scripts"
 sys.path.append(scripts_dir)
 
 import uk_trace.parse as parse

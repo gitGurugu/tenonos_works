@@ -5,7 +5,9 @@
  */
 
 #include <uk/essentials.h>
+#include <string.h>
 #include <uk/plat/common/bootinfo.h>
+#include <uk/plat/common/memory.h>
 
 /**
  * Space reservation for boot information. Will be populated by build script.
@@ -24,10 +26,23 @@ struct ukplat_bootinfo *ukplat_bootinfo_get(void)
 	struct ukplat_bootinfo *bi = (struct ukplat_bootinfo *)bi_bootinfo_sec;
 
 	if (unlikely(!bi_bootinfo)) {
+		/*
+		 * Normally, the build script (mkbootinfo.py) populates the
+		 * .uk_bootinfo section with a valid bootinfo structure and an
+		 * initial memory region list. However, in some configurations
+		 * (or when the script is not run), this section may be left
+		 * uninitialized. In that case, we fall back to initializing an
+		 * empty bootinfo here and let ukplat_bootinfo_fdt_setup()
+		 * populate the memory regions from the device tree.
+		 */
 		if (unlikely(bi->magic != UKPLAT_BOOTINFO_MAGIC ||
-			     bi->version != UKPLAT_BOOTINFO_VERSION ||
-			     bi->mrds.count == 0))
-			return NULL;
+			     bi->version != UKPLAT_BOOTINFO_VERSION)) {
+			memset(bi, 0, sizeof(*bi));
+			bi->magic = UKPLAT_BOOTINFO_MAGIC;
+			bi->version = UKPLAT_BOOTINFO_VERSION;
+			ukplat_memregion_list_init(&bi->mrds,
+						   CONFIG_UKPLAT_MEMREGION_MAX_COUNT);
+		}
 
 		bi_bootinfo = bi;
 	}

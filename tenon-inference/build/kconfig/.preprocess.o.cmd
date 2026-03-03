@@ -1,8 +1,8 @@
-cmd_/home/curryking/tenonos_work/tenon-inference/build/kconfig/preprocess.o := 
+cmd_/root/tenonos_works/tenon-inference/build/kconfig/preprocess.o := 
 
-source_/home/curryking/tenonos_work/tenon-inference/build/kconfig/preprocess.o := preprocess.c
+source_/root/tenonos_works/tenon-inference/build/kconfig/preprocess.o := preprocess.c
 
-deps_/home/curryking/tenonos_work/tenon-inference/build/kconfig/preprocess.o := \
+deps_/root/tenonos_works/tenon-inference/build/kconfig/preprocess.o := \
   /usr/include/stdc-predef.h \
   /usr/include/ctype.h \
   /usr/include/features.h \
@@ -69,6 +69,6 @@ deps_/home/curryking/tenonos_work/tenon-inference/build/kconfig/preprocess.o := 
   /usr/include/assert.h \
   lkc_proto.h \
 
-/home/curryking/tenonos_work/tenon-inference/build/kconfig/preprocess.o: $(deps_/home/curryking/tenonos_work/tenon-inference/build/kconfig/preprocess.o)
+/root/tenonos_works/tenon-inference/build/kconfig/preprocess.o: $(deps_/root/tenonos_works/tenon-inference/build/kconfig/preprocess.o)
 
-$(deps_/home/curryking/tenonos_work/tenon-inference/build/kconfig/preprocess.o):
+$(deps_/root/tenonos_works/tenon-inference/build/kconfig/preprocess.o):

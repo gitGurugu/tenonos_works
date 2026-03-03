@@ -1,1 +1,1 @@
-aarch64-linux-gnu-objcopy --keep-global-symbols=/home/curryking/tenonos_work/tenon/lib/tnschedprio/exportsyms.uk       /home/curryking/tenonos_work/tenon-inference/build/libtnschedprio.ld.o /home/curryking/tenonos_work/tenon-inference/build/libtnschedprio.o
+aarch64-linux-gnu-objcopy --keep-global-symbols=/root/tenonos_works/tenon/lib/tnschedprio/exportsyms.uk       /root/tenonos_works/tenon-inference/build/libtnschedprio.ld.o /root/tenonos_works/tenon-inference/build/libtnschedprio.o

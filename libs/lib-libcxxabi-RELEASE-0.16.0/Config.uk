@@ -1,0 +1,8 @@
+menuconfig LIBCXXABI
+    bool "libcxxabi - c++ abi"
+    default n
+
+if LIBCXXABI
+    config LIBCXXABI_THREADS
+    bool "Enable threads support"
+endif

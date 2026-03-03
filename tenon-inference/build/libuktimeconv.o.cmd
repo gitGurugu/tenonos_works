@@ -1,1 +1,1 @@
-aarch64-linux-gnu-objcopy --keep-global-symbols=/home/curryking/tenonos_work/tenon/lib/uktimeconv/exportsyms.uk       /home/curryking/tenonos_work/tenon-inference/build/libuktimeconv.ld.o /home/curryking/tenonos_work/tenon-inference/build/libuktimeconv.o
+aarch64-linux-gnu-objcopy --keep-global-symbols=/root/tenonos_works/tenon/lib/uktimeconv/exportsyms.uk       /root/tenonos_works/tenon-inference/build/libuktimeconv.ld.o /root/tenonos_works/tenon-inference/build/libuktimeconv.o

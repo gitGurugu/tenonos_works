@@ -1,0 +1,37 @@
+#ifndef _LIBCPP___CONFIG_SITE
+#define _LIBCPP___CONFIG_SITE
+
+#include <uk/config.h>
+
+#define _LIBCPP_ABI_VERSION 1
+#define _LIBCPP_ABI_NAMESPACE __1
+
+#ifdef CONFIG_CXX_THREADS
+#define _LIBCPP_HAS_THREAD_API_PTHREAD
+#if !defined(__linux__)
+#define __linux__
+#endif
+#else
+#if !defined(_LIBCPP_HAS_NO_THREADS)
+#define _LIBCPP_HAS_NO_THREADS
+#endif
+#endif
+
+#define _LIBCPP_PROVIDES_DEFAULT_RUNE_TABLE
+#define _LIBCPP_HAS_NO_VENDOR_AVAILABILITY_ANNOTATIONS
+#define _LIBCPP_ENABLE_ASSERTIONS_DEFAULT 0
+#define _LIBCPP_HAS_NO_C11_ALIGNED_ALLOC 1
+
+#if !defined(_LIBCPP_BUILDING_LIBRARY)
+#define _LIBCPP_BUILDING_LIBRARY
+#endif
+
+#if defined( __arm__) || defined(__ARM_64__)
+#undef __FLT16_MANT_DIG__
+#endif
+
+#ifdef CONFIG_LIBMUSL
+#define _LIBCPP_HAS_MUSL_LIBC
+#endif
+
+#endif // _LIBCPP___CONFIG_SITE

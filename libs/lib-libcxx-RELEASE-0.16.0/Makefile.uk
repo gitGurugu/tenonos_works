@@ -1,0 +1,166 @@
+#  libcxx Makefile.uk
+#
+#  Authors: Vlad-Andrei Badoiu <vlad_andrei.badoiu@stud.acs.upb.ro>
+#           Marco Schlumpp <marco@unikraft.io>
+#           Andrei Tatar <andrei@unikraft.io>
+#
+#  Copyright (c) 2019, Politehnica University of Bucharest. All rights reserved.
+#  Copyright (c) 2023, Unikraft GmbH and The Unikraft Authors.
+#
+#  Redistribution and use in source and binary forms, with or without
+#  modification, are permitted provided that the following conditions
+#  are met:
+#
+#  1. Redistributions of source code must retain the above copyright
+#     notice, this list of conditions and the following disclaimer.
+#  2. Redistributions in binary form must reproduce the above copyright
+#     notice, this list of conditions and the following disclaimer in the
+#     documentation and/or other materials provided with the distribution.
+#  3. Neither the name of the copyright holder nor the names of its
+#     contributors may be used to endorse or promote products derived from
+#     this software without specific prior written permission.
+#
+#  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+#  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+#  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+#  ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+#  LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+#  CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+#  SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+#  INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+#  CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+#  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+#  POSSIBILITY OF SUCH DAMAGE.
+#
+
+
+################################################################################
+# Library registration
+################################################################################
+$(eval $(call addlib_s,libcxx,$(CONFIG_LIBCXX)))
+
+ifeq ($(CONFIG_LIBCXX),y)
+ifeq ($(call have_gcc),y)
+$(call error_if_gcc_version_lt,11,0)
+else ifeq ($(call have_clang),y)
+$(call error_if_clang_version_lt,10,0)
+endif
+endif
+
+################################################################################
+# Sources
+################################################################################
+LIBCXX_VERSION=14.0.6
+LIBCXX_URL=https://github.com/llvm/llvm-project/releases/download/llvmorg-$(LIBCXX_VERSION)/libcxx-$(LIBCXX_VERSION).src.tar.xz
+LIBCXX_PATCHDIR=$(LIBCXX_BASE)/patches
+$(eval $(call fetch,libcxx,$(LIBCXX_URL)))
+$(eval $(call patch,libcxx,$(LIBCXX_PATCHDIR),libcxx-$(LIBCXX_VERSION).src))
+
+################################################################################
+# Helpers
+################################################################################
+LIBCXX_SRC = $(LIBCXX_ORIGIN)/libcxx-$(LIBCXX_VERSION).src
+
+################################################################################
+# Library includes
+################################################################################
+CINCLUDES-$(CONFIG_LIBCXX) += -I$(LIBCXX_BASE)/include
+CINCLUDES-$(CONFIG_LIBCXX) += -I$(LIBCXX_SRC)/src
+CINCLUDES-$(CONFIG_LIBCXX) += -I$(LIBCXX_SRC)/include
+
+CXXINCLUDES-$(CONFIG_LIBCXX) += -I$(LIBCXX_BASE)/include
+CXXINCLUDES-$(CONFIG_LIBCXX) += -I$(LIBCXX_SRC)/src
+CXXINCLUDES-$(CONFIG_LIBCXX) += -I$(LIBCXX_SRC)/include
+
+# include/locale uses _GNU_SOURCE extensions from stdlib.h
+CXXFLAGS-$(CONFIG_LIBCXX) += -D_GNU_SOURCE
+
+################################################################################
+# Global flags
+################################################################################
+LIBCXX_CONFIG_FLAGS += -DLIBCXX_BUILDING_LIBCXXABI
+LIBCXX_CONFIG_FLAGS += -D_LIBCPP_BUILDING_LIBRARY
+LIBCXX_CONFIG_FLAGS += -D_LIBCPP_DISABLE_NEW_DELETE_DEFINITIONS
+LIBCXX_CONFIG_FLAGS += -D_LIBCPP_HAS_NO_PRAGMA_SYSTEM_HEADER
+LIBCXX_CONFIG_FLAGS += -D__STDC_CONSTANT_MACROS
+LIBCXX_CONFIG_FLAGS += -D__STDC_FORMAT_MACROS
+LIBCXX_CONFIG_FLAGS += -D__STDC_LIMIT_MACROS
+
+LIBCXX_SUPPRESS_FLAGS-y += -Wno-attributes
+LIBCXX_SUPPRESS_FLAGS-y += -Wno-comment
+LIBCXX_SUPPRESS_FLAGS-y += -Wno-error
+LIBCXX_SUPPRESS_FLAGS-y += -Wno-long-long
+LIBCXX_SUPPRESS_FLAGS-y += -Wno-misleading-indentation
+LIBCXX_SUPPRESS_FLAGS-y += -Wno-missing-field-initializers
+LIBCXX_SUPPRESS_FLAGS-y += -Wno-unused-parameter
+LIBCXX_SUPPRESS_FLAGS-y += -Wno-parentheses
+LIBCXX_SUPPRESS_FLAGS-y += -Wno-deprecated-declarations
+LIBCXX_SUPPRESS_FLAGS-y += -Wno-array-bounds
+LIBCXX_SUPPRESS_FLAGS-y += -Wno-cpp
+LIBCXX_SUPPRESS_FLAGS-$(call have_clang) += -Wno-keyword-compat
+LIBCXX_SUPPRESS_FLAGS-$(call have_clang) += -Wno-user-defined-literals
+LIBCXX_SUPPRESS_FLAGS-$(call have_gcc) += -Wno-stringop-overflow
+LIBCXX_SUPPRESS_FLAGS-$(call have_gcc) += -Wno-alloc-size-larger-than
+LIBCXX_SUPPRESS_FLAGS-$(call have_gcc) += -Wno-maybe-uninitialized
+LIBCXX_SUPPRESS_FLAGS-$(call have_gcc) += -Wno-unknown-pragmas
+
+LIBCXX_CFLAGS-y    += $(LIBCXX_CONFIG_FLAGS)
+LIBCXX_CXXFLAGS-y  += $(LIBCXX_CONFIG_FLAGS) -std=c++2a
+LIBCXX_CXXFLAGS-$(call have_gcc) += -Wno-literal-suffix
+LIBCXX_CXXFLAGS-$(call have_gcc) += -Wno-dangling-reference
+
+LIBCXX_CFLAGS-y   += $(LIBCXX_SUPPRESS_FLAGS-y)
+LIBCXX_CXXFLAGS-y += $(LIBCXX_SUPPRESS_FLAGS-y)
+
+LIBCXX_SRCS-y += $(LIBCXX_BASE)/glue.c
+################################################################################
+# Library sources
+################################################################################
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/algorithm.cpp
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/any.cpp
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/atomic.cpp
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/barrier.cpp
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/bind.cpp
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/charconv.cpp
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/chrono.cpp
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/condition_variable.cpp
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/condition_variable_destructor.cpp
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/exception.cpp
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/filesystem/directory_iterator.cpp
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/filesystem/operations.cpp
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/functional.cpp
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/future.cpp
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/hash.cpp
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/ios.cpp
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/ios.instantiations.cpp
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/iostream.cpp
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/legacy_pointer_safety.cpp
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/locale.cpp
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/memory.cpp
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/experimental/memory_resource.cpp
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/mutex.cpp
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/mutex_destructor.cpp
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/new.cpp
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/optional.cpp
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/random.cpp
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/random_shuffle.cpp
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/regex.cpp
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/ryu/d2fixed.cpp
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/ryu/d2s.cpp
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/ryu/f2s.cpp
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/shared_mutex.cpp
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/stdexcept.cpp
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/string.cpp
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/strstream.cpp
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/system_error.cpp
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/thread.cpp
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/typeinfo.cpp
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/utility.cpp
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/valarray.cpp
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/variant.cpp
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/vector.cpp
+
+ifneq ($(CONFIG_LIBCOMPILER_RT),y)
+# Compiler RT comes with an own implementation
+LIBCXX_SRCS-y += $(LIBCXX_SRC)/src/filesystem/int128_builtins.cpp
+endif

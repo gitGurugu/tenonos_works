@@ -1,0 +1,5 @@
+name        := "libcxxabi"
+description := "An LLVM project which provides a new implementation of low level support for a standard C++ library."
+homepage    := "https://libcxxabi.llvm.org/"
+version     := 14.0.6 sha256:82fbe9033da986f6ff3092a9df31049b4b19cbe59a46c6ab54e0523b31550794 https://github.com/llvm/llvm-project/releases/download/llvmorg-14.0.6/libcxxabi-14.0.6.src.tar.xz
+license     := "MIT"

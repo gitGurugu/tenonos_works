@@ -86,7 +86,7 @@ config APPINFERENCE_TRACE
 
 config APPINFERENCE_LOG_LEVEL
 	int "Log level (0=ERROR, 1=WARN, 2=INFO, 3=DEBUG)"
-	default 2
+	default 3
 	range 0 3
 	help
 	  Set logging verbosity level

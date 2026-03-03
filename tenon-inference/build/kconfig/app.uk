@@ -1,4 +1,4 @@
 # Auto generated file. DO NOT EDIT
 menu "Application Options"
-source "/home/curryking/tenonos_work/tenon-inference/Config.uk"
+source "/root/tenonos_works/tenon-inference/Config.uk"
 endmenu

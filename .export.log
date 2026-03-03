@@ -1,0 +1,122 @@
+                                  [36m⠙[0m convert onnx model to try 'pip install -U aliyun-log-python-sdk'
+                                  [36m⠹[0m convert onnx model to                                   [36m⠸[0m convert onnx model to                                   [36m⠼[0m convert onnx model to                                   [36m⠴[0m convert onnx model to                                   [36m⠦[0m convert onnx model to Collecting aliyun-log-python-sdk
+                                  [36m⠧[0m convert onnx model to                                   [36m⠇[0m convert onnx model to                                   [36m⠏[0m convert onnx model to                                   [36m⠋[0m convert onnx model to                                   [36m⠙[0m convert onnx model to                                   [36m⠹[0m convert onnx model to                                   [36m⠸[0m convert onnx model to   Downloading aliyun_log_python_sdk-0.9.42.tar.gz (154 kB)
+                                  [36m⠼[0m convert onnx model to                                   [36m⠴[0m convert onnx model to                                   [36m⠦[0m convert onnx model to   Installing build dependencies: started
+                                  [36m⠧[0m convert onnx model to                                   [36m⠇[0m convert onnx model to                                   [36m⠏[0m convert onnx model to                                   [36m⠋[0m convert onnx model to                                   [36m⠙[0m convert onnx model to                                   [36m⠹[0m convert onnx model to                                   [36m⠸[0m convert onnx model to                                   [36m⠼[0m convert onnx model to                                   [36m⠴[0m convert onnx model to                                   [36m⠦[0m convert onnx model to                                   [36m⠧[0m convert onnx model to                                   [36m⠇[0m convert onnx model to                                   [36m⠏[0m convert onnx model to                                   [36m⠋[0m convert onnx model to                                   [36m⠙[0m convert onnx model to                                   [36m⠹[0m convert onnx model to                                   [36m⠸[0m convert onnx model to                                   [36m⠼[0m convert onnx model to                                   [36m⠴[0m convert onnx model to                                   [36m⠦[0m convert onnx model to                                   [36m⠧[0m convert onnx model to                                   [36m⠇[0m convert onnx model to                                   [36m⠏[0m convert onnx model to                                   [36m⠋[0m convert onnx model to                                   [36m⠙[0m convert onnx model to                                   [36m⠹[0m convert onnx model to                                   [36m⠸[0m convert onnx model to                                   [36m⠼[0m convert onnx model to                                   [36m⠴[0m convert onnx model to                                   [36m⠦[0m convert onnx model to                                   [36m⠧[0m convert onnx model to                                   [36m⠇[0m convert onnx model to                                   [36m⠏[0m convert onnx model to   Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+                                  [36m⠋[0m convert onnx model to                                   [36m⠙[0m convert onnx model to   Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+                                  [36m⠹[0m convert onnx model to                                   [36m⠸[0m convert onnx model to   Preparing metadata (pyproject.toml): finished with status 'done'
+                                  [36m⠼[0m convert onnx model to Collecting six (from aliyun-log-python-sdk)
+                                  [36m⠴[0m convert onnx model to   Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+                                  [36m⠦[0m convert onnx model to                                   [36m⠧[0m convert onnx model to Collecting requests (from aliyun-log-python-sdk)
+                                  [36m⠇[0m convert onnx model to   Downloading requests-2.32.5-py3-none-any.whl.metadata (4.9 kB)
+                                  [36m⠏[0m convert onnx model to                                   [36m⠋[0m convert onnx model to                                   [36m⠙[0m convert onnx model to                                   [36m⠹[0m convert onnx model to                                   [36m⠸[0m convert onnx model to                                   [36m⠼[0m convert onnx model to                                   [36m⠴[0m convert onnx model to                                   [36m⠦[0m convert onnx model to                                   [36m⠧[0m convert onnx model to                                   [36m⠇[0m convert onnx model to                                   [36m⠏[0m convert onnx model to                                   [36m⠋[0m convert onnx model to                                   [36m⠙[0m convert onnx model to                                   [36m⠹[0m convert onnx model to                                   [36m⠸[0m convert onnx model to Collecting python-dateutil (from aliyun-log-python-sdk)
+                                  [36m⠼[0m convert onnx model to   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+                                  [36m⠴[0m convert onnx model to                                   [36m⠦[0m convert onnx model to                                   [36m⠧[0m convert onnx model to                                   [36m⠇[0m convert onnx model to                                   [36m⠏[0m convert onnx model to                                   [36m⠋[0m convert onnx model to Collecting elasticsearch (from aliyun-log-python-sdk)
+                                  [36m⠙[0m convert onnx model to   Downloading elasticsearch-9.3.0-py3-none-any.whl.metadata (9.0 kB)
+                                  [36m⠹[0m convert onnx model to Collecting jmespath (from aliyun-log-python-sdk)
+                                  [36m⠸[0m convert onnx model to   Downloading jmespath-1.1.0-py3-none-any.whl.metadata (7.6 kB)
+                                  [36m⠼[0m convert onnx model to Collecting dateparser (from aliyun-log-python-sdk)
+                                  [36m⠴[0m convert onnx model to   Downloading dateparser-1.3.0-py3-none-any.whl.metadata (30 kB)
+                                  [36m⠦[0m convert onnx model to                                   [36m⠧[0m convert onnx model to Collecting protobuf<6.0.0,>=3.20.3 (from aliyun-log-python-sdk)
+                                  [36m⠇[0m convert onnx model to                                   [36m⠏[0m convert onnx model to   Downloading protobuf-5.29.6-cp38-abi3-manylinux2014_x86_64.whl.metadata (592 bytes)
+                                  [36m⠋[0m convert onnx model to                                   [36m⠙[0m convert onnx model to Collecting lz4 (from aliyun-log-python-sdk)
+                                  [36m⠹[0m convert onnx model to                                   [36m⠸[0m convert onnx model to                                   [36m⠼[0m convert onnx model to                                   [36m⠴[0m convert onnx model to                                   [36m⠦[0m convert onnx model to   Downloading lz4-4.4.5-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+                                  [36m⠧[0m convert onnx model to Collecting pytz>=2024.2 (from dateparser->aliyun-log-python-sdk)
+                                  [36m⠇[0m convert onnx model to   Downloading pytz-2025.2-py2.py3-none-any.whl.metadata (22 kB)
+                                  [36m⠏[0m convert onnx model to Requirement already satisfied: regex>=2024.9.11 in /usr/local/lib/python3.10/dist-packages (from dateparser->aliyun-log-python-sdk) (2026.2.28)
+                                  [36m⠋[0m convert onnx model to Collecting tzlocal>=0.2 (from dateparser->aliyun-log-python-sdk)
+                                  [36m⠙[0m convert onnx model to   Downloading tzlocal-5.3.1-py3-none-any.whl.metadata (7.6 kB)
+Requirement already satisfied: anyio in /usr/local/lib/python3.10/dist-packages (from elasticsearch->aliyun-log-python-sdk) (4.12.1)
+                                  [36m⠹[0m convert onnx model to Collecting elastic-transport<10,>=9.2.0 (from elasticsearch->aliyun-log-python-sdk)
+                                  [36m⠸[0m convert onnx model to   Downloading elastic_transport-9.2.1-py3-none-any.whl.metadata (3.9 kB)
+                                  [36m⠼[0m convert onnx model to Collecting sniffio (from elasticsearch->aliyun-log-python-sdk)
+                                  [36m⠴[0m convert onnx model to   Downloading sniffio-1.3.1-py3-none-any.whl.metadata (3.9 kB)
+Requirement already satisfied: typing-extensions in /usr/local/lib/python3.10/dist-packages (from elasticsearch->aliyun-log-python-sdk) (4.15.0)
+                                  [36m⠦[0m convert onnx model to Collecting urllib3<3,>=1.26.2 (from elastic-transport<10,>=9.2.0->elasticsearch->aliyun-log-python-sdk)
+                                  [36m⠧[0m convert onnx model to   Downloading urllib3-2.6.3-py3-none-any.whl.metadata (6.9 kB)
+Requirement already satisfied: certifi in /usr/local/lib/python3.10/dist-packages (from elastic-transport<10,>=9.2.0->elasticsearch->aliyun-log-python-sdk) (2026.2.25)
+Requirement already satisfied: exceptiongroup>=1.0.2 in /usr/local/lib/python3.10/dist-packages (from anyio->elasticsearch->aliyun-log-python-sdk) (1.3.1)
+Requirement already satisfied: idna>=2.8 in /usr/local/lib/python3.10/dist-packages (from anyio->elasticsearch->aliyun-log-python-sdk) (3.11)
+                                  [36m⠇[0m convert onnx model to                                   [36m⠏[0m convert onnx model to Collecting charset_normalizer<4,>=2 (from requests->aliyun-log-python-sdk)
+                                  [36m⠋[0m convert onnx model to   Downloading charset_normalizer-3.4.4-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (37 kB)
+                                  [36m⠙[0m convert onnx model to                                   [36m⠹[0m convert onnx model to Downloading protobuf-5.29.6-cp38-abi3-manylinux2014_x86_64.whl (320 kB)
+                                  [36m⠸[0m convert onnx model to                                   [36m⠼[0m convert onnx model to Downloading dateparser-1.3.0-py3-none-any.whl (318 kB)
+                                  [36m⠴[0m convert onnx model to                                   [36m⠦[0m convert onnx model to Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+                                  [36m⠧[0m convert onnx model to Downloading pytz-2025.2-py2.py3-none-any.whl (509 kB)
+                                  [36m⠇[0m convert onnx model to                                   [36m⠏[0m convert onnx model to Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+                                  [36m⠋[0m convert onnx model to Downloading tzlocal-5.3.1-py3-none-any.whl (18 kB)
+                                  [36m⠙[0m convert onnx model to Downloading elasticsearch-9.3.0-py3-none-any.whl (979 kB)
+                                  [36m⠹[0m convert onnx model to    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 979.4/979.4 kB 19.3 MB/s  0:00:00
+                                  [36m⠸[0m convert onnx model to Downloading elastic_transport-9.2.1-py3-none-any.whl (65 kB)
+                                  [36m⠼[0m convert onnx model to Downloading urllib3-2.6.3-py3-none-any.whl (131 kB)
+                                  [36m⠴[0m convert onnx model to Downloading jmespath-1.1.0-py3-none-any.whl (20 kB)
+                                  [36m⠦[0m convert onnx model to Downloading lz4-4.4.5-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.4 MB)
+                                  [36m⠧[0m convert onnx model to    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 35.3 MB/s  0:00:00
+                                  [36m⠇[0m convert onnx model to Downloading requests-2.32.5-py3-none-any.whl (64 kB)
+                                  [36m⠏[0m convert onnx model to                                   [36m⠋[0m convert onnx model to                                   [36m⠙[0m convert onnx model to                                   [36m⠹[0m convert onnx model to                                   [36m⠸[0m convert onnx model to                                   [36m⠼[0m convert onnx model to                                   [36m⠴[0m convert onnx model to                                   [36m⠦[0m convert onnx model to                                   [36m⠧[0m convert onnx model to                                   [36m⠇[0m convert onnx model to                                   [36m⠏[0m convert onnx model to                                   [36m⠋[0m convert onnx model to                                   [36m⠙[0m convert onnx model to                                   [36m⠹[0m convert onnx model to                                   [36m⠸[0m convert onnx model to Downloading charset_normalizer-3.4.4-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (153 kB)
+                                  [36m⠼[0m convert onnx model to                                   [36m⠴[0m convert onnx model to                                   [36m⠦[0m convert onnx model to                                   [36m⠧[0m convert onnx model to                                   [36m⠇[0m convert onnx model to                                   [36m⠏[0m convert onnx model to                                   [36m⠋[0m convert onnx model to                                   [36m⠙[0m convert onnx model to Downloading sniffio-1.3.1-py3-none-any.whl (10 kB)
+Building wheels for collected packages: aliyun-log-python-sdk
+  Building wheel for aliyun-log-python-sdk (pyproject.toml): started
+                                  [36m⠹[0m convert onnx model to                                   [36m⠸[0m convert onnx model to                                   [36m⠼[0m convert onnx model to   Building wheel for aliyun-log-python-sdk (pyproject.toml): finished with status 'done'
+  Created wheel for aliyun-log-python-sdk: filename=aliyun_log_python_sdk-0.9.42-py3-none-any.whl size=203135 sha256=e47574235501f0557692776bf7c52ca0ea3b5b06e1996e1fffc777aecc639d9a
+  Stored in directory: /root/.cache/pip/wheels/6b/fa/ba/0a609f3d6273717ac4a34135d815a96ffaec049be1afea0942
+Successfully built aliyun-log-python-sdk
+                                  [36m⠴[0m convert onnx model to Installing collected packages: pytz, urllib3, tzlocal, sniffio, six, protobuf, lz4, jmespath, charset_normalizer, requests, python-dateutil, elastic-transport, elasticsearch, dateparser, aliyun-log-python-sdk
+                                  [36m⠦[0m convert onnx model to                                   [36m⠧[0m convert onnx model to   Attempting uninstall: protobuf
+    Found existing installation: protobuf 7.34.0
+    Uninstalling protobuf-7.34.0:
+      Successfully uninstalled protobuf-7.34.0
+                                  [36m⠇[0m convert onnx model to                                   [36m⠏[0m convert onnx model to                                   [36m⠋[0m convert onnx model to                                   [36m⠙[0m convert onnx model to                                   [36m⠹[0m convert onnx model to                                   [36m⠸[0m convert onnx model to                                   [36m⠼[0m convert onnx model to                                   [36m⠴[0m convert onnx model to                                   [36m⠦[0m convert onnx model to                                   [36m⠧[0m convert onnx model to                                   [36m⠇[0m convert onnx model to 
+Successfully installed aliyun-log-python-sdk-0.9.42 charset_normalizer-3.4.4 dateparser-1.3.0 elastic-transport-9.2.1 elasticsearch-9.3.0 jmespath-1.1.0 lz4-4.4.5 protobuf-5.29.6 python-dateutil-2.9.0.post0 pytz-2025.2 requests-2.32.5 six-1.17.0 sniffio-1.3.1 tzlocal-5.3.1 urllib3-2.6.3
+                                  [36m⠏[0m convert onnx model to                                   [36m⠋[0m convert onnx model to                                   [36m⠙[0m convert onnx model to                                   [36m⠹[0m convert onnx model to                                   [36m⠸[0m convert onnx model to                                   [36m⠼[0m convert onnx model to The device supports: i8sdot:0, fp16:0, i8mm: 0, sve2: 0, sme2: 0
+The device supports: i8sdot:0, fp16:0, i8mm: 0, sve2: 0, sme2: 0
+Don't has bizCode, use MNNTest for default
+Start to Convert Other Model Format To MNN Model..., target version: 3.4
+[18:51:51] :46: ONNX Model ir version: 8
+[18:51:51] :47: ONNX Model opset version: 15
+Start to Optimize the MNN Net...
+Fuse Attention as /Reshape_8_output_0 [kvcache: 1, has_sinks: 0]
+Fuse Attention as /Reshape_17_output_0 [kvcache: 1, has_sinks: 0]
+Fuse Attention as /Reshape_26_output_0 [kvcache: 1, has_sinks: 0]
+Fuse Attention as /Reshape_35_output_0 [kvcache: 1, has_sinks: 0]
+Fuse Attention as /Reshape_44_output_0 [kvcache: 1, has_sinks: 0]
+Fuse Attention as /Reshape_53_output_0 [kvcache: 1, has_sinks: 0]
+Fuse Attention as /Reshape_62_output_0 [kvcache: 1, has_sinks: 0]
+Fuse Attention as /Reshape_71_output_0 [kvcache: 1, has_sinks: 0]
+Fuse Attention as /Reshape_80_output_0 [kvcache: 1, has_sinks: 0]
+Fuse Attention as /Reshape_89_output_0 [kvcache: 1, has_sinks: 0]
+Fuse Attention as /Reshape_98_output_0 [kvcache: 1, has_sinks: 0]
+Fuse Attention as /Reshape_107_output_0 [kvcache: 1, has_sinks: 0]
+Fuse Attention as /Reshape_116_output_0 [kvcache: 1, has_sinks: 0]
+Fuse Attention as /Reshape_125_output_0 [kvcache: 1, has_sinks: 0]
+Fuse Attention as /Reshape_134_output_0 [kvcache: 1, has_sinks: 0]
+Fuse Attention as /Reshape_143_output_0 [kvcache: 1, has_sinks: 0]
+Fuse Attention as /Reshape_152_output_0 [kvcache: 1, has_sinks: 0]
+Fuse Attention as /Reshape_161_output_0 [kvcache: 1, has_sinks: 0]
+Fuse Attention as /Reshape_170_output_0 [kvcache: 1, has_sinks: 0]
+Fuse Attention as /Reshape_179_output_0 [kvcache: 1, has_sinks: 0]
+Fuse Attention as /Reshape_188_output_0 [kvcache: 1, has_sinks: 0]
+Fuse Attention as /Reshape_197_output_0 [kvcache: 1, has_sinks: 0]
+Fuse Attention as /Reshape_206_output_0 [kvcache: 1, has_sinks: 0]
+Fuse Attention as /Reshape_215_output_0 [kvcache: 1, has_sinks: 0]
+Remove past KV for presents
+Save Weight to ./model/llm.mnn.weight
+inputTensors : [ input_ids, attention_mask, position_ids, past_key_values, logits_index, ]
+outputTensors: [ logits, hidden_states, presents, ]
+Converted Success!
+                                  [36m⠴[0m convert onnx model to Don't has bizCode, use MNNTest for default
+Start to Convert Other Model Format To MNN Model..., target version: 3.4
+MNNModel ./model/llm.mnn has convert to JsonFile ./model/llm.mnn.json.
+Don't has bizCode, use MNNTest for default
+Start to Convert Other Model Format To MNN Model..., target version: 3.4
+JsonFile ./model/llm.mnn.json has convert to MNNModel ./model/llm.mnn.
+Don't has bizCode, use MNNTest for default
+Start to Convert Other Model Format To MNN Model..., target version: 3.4
+Start to Optimize the MNN Net...
+inputTensors : [ input_ids, attention_mask, position_ids, past_key_values, logits_index, ]
+outputTensors: [ logits, hidden_states, presents, ]
+Converted Success!
+Don't has bizCode, use MNNTest for default
+Start to Convert Other Model Format To MNN Model..., target version: 3.4

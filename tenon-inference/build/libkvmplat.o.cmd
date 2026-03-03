@@ -1,1 +1,1 @@
-aarch64-linux-gnu-objcopy        /home/curryking/tenonos_work/tenon-inference/build/libkvmplat.ld.o /home/curryking/tenonos_work/tenon-inference/build/libkvmplat.o
+aarch64-linux-gnu-objcopy        /root/tenonos_works/tenon-inference/build/libkvmplat.ld.o /root/tenonos_works/tenon-inference/build/libkvmplat.o

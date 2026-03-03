@@ -1,8 +1,8 @@
-cmd_/home/curryking/tenonos_work/tenon-inference/build/kconfig/lexer.lex.o := 
+cmd_/root/tenonos_works/tenon-inference/build/kconfig/lexer.lex.o := 
 
-source_/home/curryking/tenonos_work/tenon-inference/build/kconfig/lexer.lex.o := /home/curryking/tenonos_work/tenon-inference/build/kconfig/lexer.lex.c
+source_/root/tenonos_works/tenon-inference/build/kconfig/lexer.lex.o := /root/tenonos_works/tenon-inference/build/kconfig/lexer.lex.c
 
-deps_/home/curryking/tenonos_work/tenon-inference/build/kconfig/lexer.lex.o := \
+deps_/root/tenonos_works/tenon-inference/build/kconfig/lexer.lex.o := \
   /usr/include/stdc-predef.h \
   /usr/include/stdio.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
@@ -95,8 +95,8 @@ deps_/home/curryking/tenonos_work/tenon-inference/build/kconfig/lexer.lex.o := \
   list.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
   lkc_proto.h \
-  /home/curryking/tenonos_work/tenon-inference/build/kconfig/parser.tab.h \
+  /root/tenonos_works/tenon-inference/build/kconfig/parser.tab.h \
 
-/home/curryking/tenonos_work/tenon-inference/build/kconfig/lexer.lex.o: $(deps_/home/curryking/tenonos_work/tenon-inference/build/kconfig/lexer.lex.o)
+/root/tenonos_works/tenon-inference/build/kconfig/lexer.lex.o: $(deps_/root/tenonos_works/tenon-inference/build/kconfig/lexer.lex.o)
 
-$(deps_/home/curryking/tenonos_work/tenon-inference/build/kconfig/lexer.lex.o):
+$(deps_/root/tenonos_works/tenon-inference/build/kconfig/lexer.lex.o):

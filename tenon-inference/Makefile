@@ -4,7 +4,8 @@ UK_BUILD ?= $(PWD)/workdir/build
 LIBS :=
 
 # 设置 TenonOS 核心目录 (根据实际路径修改)
-TENONOS_DIR ?= /home/curryking/tenonos_work/tenon
+# 注意：这里必须指到真正的 TenonOS 内核工程目录
+TENONOS_DIR ?= /root/tenonos_works/tenon
 
 # 默认目标
 .PHONY: all

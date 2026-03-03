@@ -29,4 +29,13 @@
 #define UK_FUTEX_WAIT_PRIVATE (UK_FUTEX_WAIT | UK_FUTEX_PRIVATE_FLAG)
 #define UK_FUTEX_WAKE_PRIVATE (UK_FUTEX_WAKE | UK_FUTEX_PRIVATE_FLAG)
 
+/* Compatibility macros for standard Linux futex constants */
+#ifndef FUTEX_WAIT_PRIVATE
+#define FUTEX_WAIT_PRIVATE UK_FUTEX_WAIT_PRIVATE
+#endif
+
+#ifndef FUTEX_WAKE_PRIVATE
+#define FUTEX_WAKE_PRIVATE UK_FUTEX_WAKE_PRIVATE
+#endif
+
 #endif /* __UK_UK_FUTEX_H__ */

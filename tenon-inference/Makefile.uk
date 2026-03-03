@@ -1,12 +1,53 @@
 $(eval $(call addlib,appinference))
 
-APPINFERENCE_SRCS-y += $(APPINFERENCE_BASE)/main.c
-APPINFERENCE_SRCS-y += $(APPINFERENCE_BASE)/src/api.c
-APPINFERENCE_SRCS-y += $(APPINFERENCE_BASE)/src/threadpool.c
-APPINFERENCE_SRCS-y += $(APPINFERENCE_BASE)/src/mempool.c
-APPINFERENCE_SRCS-y += $(APPINFERENCE_BASE)/src/scheduler.c
-APPINFERENCE_SRCS-y += $(APPINFERENCE_BASE)/src/batch.c
-APPINFERENCE_SRCS-y += $(APPINFERENCE_BASE)/src/loader.c
-APPINFERENCE_SRCS-y += $(APPINFERENCE_BASE)/src/metrics.c
-APPINFERENCE_SRCS-y += $(APPINFERENCE_BASE)/src/logger.c
+# 当前先做最小 Hello World 验证，只编译 main.cpp
+APPINFERENCE_SRCS-y += $(APPINFERENCE_BASE)/main.cpp
+## 如果后续要恢复完整功能，再把下面这些源文件恢复并取消注释
+##APPINFERENCE_SRCS-y += $(APPINFERENCE_BASE)/src/api.cpp
+##APPINFERENCE_SRCS-y += $(APPINFERENCE_BASE)/src/threadpool.cpp
+##APPINFERENCE_SRCS-y += $(APPINFERENCE_BASE)/src/mempool.cpp
+##APPINFERENCE_SRCS-y += $(APPINFERENCE_BASE)/src/scheduler.cpp
+##APPINFERENCE_SRCS-y += $(APPINFERENCE_BASE)/src/batch.cpp
+##APPINFERENCE_SRCS-y += $(APPINFERENCE_BASE)/src/loader.cpp
+##APPINFERENCE_SRCS-y += $(APPINFERENCE_BASE)/src/mnn_wrapper.cpp
+##APPINFERENCE_SRCS-y += $(APPINFERENCE_BASE)/src/metrics.cpp
+##APPINFERENCE_SRCS-y += $(APPINFERENCE_BASE)/src/logger.cpp
+##APPINFERENCE_SRCS-y += $(APPINFERENCE_BASE)/src/glibc_compat.cpp
 
+# MNN 库路径配置
+APPINFERENCE_CINCLUDES-y   += -I$(APPINFERENCE_BASE)/3rdparty/MNN-arm64/include
+APPINFERENCE_CXXINCLUDES-y += -I$(APPINFERENCE_BASE)/3rdparty/MNN-arm64/include
+APPINFERENCE_LDFLAGS-y     += -L$(APPINFERENCE_BASE)/3rdparty/MNN-arm64/lib
+
+# C++ 标准库头文件（交叉工具链自带的 libstdc++ headers）
+# Unikraft 往往会加 -nostdinc，所以这里显式把 aarch64 的 C++ 头文件目录加回来
+APPINFERENCE_CXXINCLUDES-y += -I/usr/aarch64-linux-gnu/include/c++/11
+APPINFERENCE_CXXINCLUDES-y += -I/usr/aarch64-linux-gnu/include/c++/11/aarch64-linux-gnu
+APPINFERENCE_CXXINCLUDES-y += -I/usr/aarch64-linux-gnu/include/c++/11/backward
+
+# 链接 libstdc++ 以及其依赖的 libgcc 以提供 MNN 库所需的 C++ 标准库和异常处理符号
+# 如果 gcc 版本不是 11，或者路径不同，请把下面的目录改成实际的那个
+STDCXX_LIB_DIR := /usr/lib/gcc-cross/aarch64-linux-gnu/11
+STDCXX_LIB     := $(STDCXX_LIB_DIR)/libstdc++.a
+# 提供 _Unwind_Resume 等异常/栈展开相关符号
+GCC_LIB        := $(STDCXX_LIB_DIR)/libgcc.a
+GCC_EH_LIB     := $(STDCXX_LIB_DIR)/libgcc_eh.a
+# 某些情况下还需要 libsupc++.a（提供 __cxa_* 等符号），如果链接时报这些符号缺失，可以取消下一行注释
+#SUPCXX_LIB     := $(STDCXX_LIB_DIR)/libsupc++.a
+
+# 告诉链接器去这个目录找库
+APPINFERENCE_LDFLAGS-y += -L$(STDCXX_LIB_DIR)
+
+# 将静态库添加到 UK_ALIBS 中（会放在 --start-group/--end-group 之间，便于解析循环依赖）
+MNN_LIB_PATH   := $(APPINFERENCE_BASE)/3rdparty/MNN-arm64/lib/libMNN.a
+UK_ALIBS-y     += $(MNN_LIB_PATH)
+# 先放兼容层依赖的 libgcc，再放 libstdc++，保证符号能被正确解析
+UK_ALIBS-y     += $(GCC_LIB)
+UK_ALIBS-y     += $(GCC_EH_LIB)
+UK_ALIBS-y     += $(STDCXX_LIB)
+#UK_ALIBS-y     += $(SUPCXX_LIB)
+
+# glibc 兼容宏：libstdc++ 头文件里会用到 __GLIBC_PREREQ 和 __locale_t
+# 这里给出最小 stub，让预处理和编译能顺利通过
+APPINFERENCE_CXXFLAGS-y += -D__GLIBC_PREREQ\(maj,min\)=0
+APPINFERENCE_CXXFLAGS-y += -D__locale_t=locale_t

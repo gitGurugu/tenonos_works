@@ -1,0 +1,56 @@
+  LN      Makefile
+  CP      config
+  GEN     libsyscall_shim: provided_syscalls.in.new
+  GEN     libuklibid: libraries.in.new
+  CP      libsyscall_shim: provided_syscalls.in
+  CP      libuklibid: libraries.in
+  LD      libkvmplat.ld.o
+  LD      libkvmpl031.ld.o
+  LD      appinference.ld.o
+  LD      libdevfs.ld.o
+  LD      libfdt.ld.o
+  LD      libposix_environ.ld.o
+  LD      libposix_fdtab.ld.o
+  LD      libposix_fdio.ld.o
+  LD      libposix_pipe.ld.o
+  LD      libposix_poll.ld.o
+  LD      libposix_process.ld.o
+  LD      libposix_futex.ld.o
+  LD      libsyscall_shim.ld.o
+  LD      libukalloc.ld.o
+  LD      libukallocbbuddy.ld.o
+  LD      libukargparse.ld.o
+  LD      libukatomic.ld.o
+  LD      libukbitops.ld.o
+  LD      libukstreambuf.ld.o
+  LD      libukboot.ld.o
+  LD      libukboot_main.ld.o
+  LD      libukbus.ld.o
+  LD      libukdebug.ld.o
+  LD      libukfile.ld.o
+  LD      libuklibid.ld.o
+  LD      libukintctlr.ld.o
+  LD      libuklock.ld.o
+  LD      libuksched.ld.o
+  LD      libukschedcoop.ld.o
+  LD      libtnschedprio.ld.o
+  LD      libuksignal.ld.o
+  LD      libuktest.ld.o
+  LD      libposix_time.ld.o
+  LD      libuktimeconv.ld.o
+  LD      libvfscore.ld.o
+  LD      libukofw.ld.o
+  LD      libtnsystick.ld.o
+  LD      libtntimer.ld.o
+  LD      libukthread.ld.o
+  LD      libtnpaging.ld.o
+  CXX     libcxx: atomic.o
+  CXX     libcxx: operations.o
+  CXX     libcxx: functional.o
+  CXX     libcxx: future.o
+  CXX     libcxx: hash.o
+  CXX     libcxx: ios.o
+  CXX     libcxx: ios.instantiations.o
+  CXX     libcxx: iostream.o
+  CXX     libcxx: legacy_pointer_safety.o
+  CXX     libcxx: locale.o

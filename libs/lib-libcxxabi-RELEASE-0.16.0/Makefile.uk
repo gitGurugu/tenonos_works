@@ -1,0 +1,113 @@
+#  libcxxabi Makefile.uk
+#
+#  Authors: Vlad-Andrei Badoiu <vlad_andrei.badoiu@stud.acs.upb.ro>
+#           Marco Schlumpp <marco@unikraft.io>
+#           Andrei Tatar <andrei@unikraft.io>
+#
+#  Copyright (c) 2019, Politehnica University of Bucharest. All rights reserved.
+#  Copyright (c) 2023, Unikraft GmbH and The Unikraft Authors.
+#
+#  Redistribution and use in source and binary forms, with or without
+#  modification, are permitted provided that the following conditions
+#  are met:
+#
+#  1. Redistributions of source code must retain the above copyright
+#     notice, this list of conditions and the following disclaimer.
+#  2. Redistributions in binary form must reproduce the above copyright
+#     notice, this list of conditions and the following disclaimer in the
+#     documentation and/or other materials provided with the distribution.
+#  3. Neither the name of the copyright holder nor the names of its
+#     contributors may be used to endorse or promote products derived from
+#     this software without specific prior written permission.
+#
+#  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+#  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+#  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+#  ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+#  LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+#  CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+#  SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+#  INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+#  CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+#  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+#  POSSIBILITY OF SUCH DAMAGE.
+#
+
+################################################################################
+# Library registration
+################################################################################
+$(eval $(call addlib_s,libcxxabi,$(CONFIG_LIBCXXABI)))
+
+ifeq ($(CONFIG_LIBCXXABI),y)
+ifneq ($(CONFIG_LIBUNWIND),y)
+$(error Require libunwind)
+endif
+endif
+
+################################################################################
+# Sources
+################################################################################
+LIBCXXABI_VERSION=14.0.6
+LIBCXXABI_URL=https://github.com/llvm/llvm-project/releases/download/llvmorg-$(LIBCXXABI_VERSION)/libcxxabi-$(LIBCXXABI_VERSION).src.tar.xz
+LIBCXXABI_PATCHDIR=$(LIBCXXABI_BASE)/patches
+$(eval $(call fetch,libcxxabi,$(LIBCXXABI_URL)))
+$(eval $(call patch,libcxxabi,$(LIBCXXABI_PATCHDIR),libcxxabi-$(LIBCXXABI_VERSION).src))
+
+################################################################################
+# Helpers
+################################################################################
+LIBCXXABI_SUBDIR=libcxxabi-$(LIBCXXABI_VERSION).src
+LIBCXXABI_SRC=$(LIBCXXABI_ORIGIN)/$(LIBCXXABI_SUBDIR)
+
+################################################################################
+# Library includes
+################################################################################
+CINCLUDES-$(CONFIG_LIBCXXABI) += -I$(LIBCXXABI_SRC)/src
+CINCLUDES-$(CONFIG_LIBCXXABI) += -I$(LIBCXXABI_SRC)/include
+
+CXXINCLUDES-$(CONFIG_LIBCXXABI) += -I$(LIBCXXABI_SRC)/src
+CXXINCLUDES-$(CONFIG_LIBCXXABI) += -I$(LIBCXXABI_SRC)/include
+
+################################################################################
+# Global flags
+################################################################################
+LIBCXXABI_CONFIG_FLAGS += -D_LIBCPP_BUILDING_LIBRARY
+LIBCXXABI_CONFIG_FLAGS += -D_LIBCXXABI_BUILDING_LIBRARY
+LIBCXXABI_CONFIG_FLAGS += -D__STDC_CONSTANT_MACROS
+LIBCXXABI_CONFIG_FLAGS += -D__STDC_FORMAT_MACROS
+LIBCXXABI_CONFIG_FLAGS += -D__STDC_LIMIT_MACROS
+LIBCXXABI_CONFIG_FLAGS += -D__linux__
+
+ifneq ($(CONFIG_LIBCXXABI_THREADS),y)
+LIBCXXABI_CONFIG_FLAGS += -D _LIBCXXABI_HAS_NO_THREADS
+endif
+
+LIBCXXABI_SUPPRESS_FLAGS += -Wno-parentheses
+
+LIBCXXABI_CFLAGS-y   += $(LIBCXXABI_CONFIG_FLAGS)
+LIBCXXABI_CXXFLAGS-y += $(LIBCXXABI_CONFIG_FLAGS)
+
+LIBCXXABI_CFLAGS-y   += $(LIBCXXABI_SUPPRESS_FLAGS)
+LIBCXXABI_CXXFLAGS-y += $(LIBCXXABI_SUPPRESS_FLAGS)
+
+################################################################################
+# Library sources
+################################################################################
+LIBCXXABI_SRCS-y += $(LIBCXXABI_SRC)/src/abort_message.cpp
+LIBCXXABI_SRCS-y += $(LIBCXXABI_SRC)/src/cxa_aux_runtime.cpp
+LIBCXXABI_SRCS-y += $(LIBCXXABI_SRC)/src/cxa_default_handlers.cpp
+LIBCXXABI_SRCS-y += $(LIBCXXABI_SRC)/src/cxa_demangle.cpp
+LIBCXXABI_SRCS-y += $(LIBCXXABI_SRC)/src/cxa_exception.cpp
+LIBCXXABI_SRCS-y += $(LIBCXXABI_SRC)/src/cxa_exception_storage.cpp
+LIBCXXABI_SRCS-y += $(LIBCXXABI_SRC)/src/cxa_guard.cpp
+LIBCXXABI_SRCS-y += $(LIBCXXABI_SRC)/src/cxa_handlers.cpp
+LIBCXXABI_SRCS-y += $(LIBCXXABI_SRC)/src/cxa_personality.cpp
+LIBCXXABI_SRCS-$(CONFIG_LIBCXXABI_THREADS) += $(LIBCXXABI_SRC)/src/cxa_thread_atexit.cpp
+LIBCXXABI_SRCS-y += $(LIBCXXABI_SRC)/src/cxa_vector.cpp
+LIBCXXABI_SRCS-y += $(LIBCXXABI_SRC)/src/cxa_virtual.cpp
+LIBCXXABI_SRCS-y += $(LIBCXXABI_SRC)/src/fallback_malloc.cpp
+LIBCXXABI_SRCS-y += $(LIBCXXABI_SRC)/src/private_typeinfo.cpp
+LIBCXXABI_SRCS-y += $(LIBCXXABI_SRC)/src/stdlib_exception.cpp
+LIBCXXABI_SRCS-y += $(LIBCXXABI_SRC)/src/stdlib_new_delete.cpp
+LIBCXXABI_SRCS-y += $(LIBCXXABI_SRC)/src/stdlib_stdexcept.cpp
+LIBCXXABI_SRCS-y += $(LIBCXXABI_SRC)/src/stdlib_typeinfo.cpp

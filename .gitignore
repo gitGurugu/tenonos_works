@@ -1,0 +1,16 @@
+# ---- Large model weights / binaries (keep local; publish via releases/LFS if needed) ----
+Qwen2.5-0.5B-Instruct/*.safetensors
+model/*.weight
+
+# ---- Build artifacts ----
+**/build/
+*.o
+*.a
+*.so
+*.dylib
+*.dll
+*.exe
+*.dbg
+*.gz
+*.db
+

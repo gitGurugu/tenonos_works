@@ -1,8 +1,8 @@
-cmd_/home/curryking/tenonos_work/tenon-inference/build/kconfig/parser.tab.o := 
+cmd_/root/tenonos_works/tenon-inference/build/kconfig/parser.tab.o := 
 
-source_/home/curryking/tenonos_work/tenon-inference/build/kconfig/parser.tab.o := /home/curryking/tenonos_work/tenon-inference/build/kconfig/parser.tab.c
+source_/root/tenonos_works/tenon-inference/build/kconfig/parser.tab.o := /root/tenonos_works/tenon-inference/build/kconfig/parser.tab.c
 
-deps_/home/curryking/tenonos_work/tenon-inference/build/kconfig/parser.tab.o := \
+deps_/root/tenonos_works/tenon-inference/build/kconfig/parser.tab.o := \
   /usr/include/stdc-predef.h \
   /usr/include/ctype.h \
   /usr/include/features.h \
@@ -72,6 +72,6 @@ deps_/home/curryking/tenonos_work/tenon-inference/build/kconfig/parser.tab.o := 
   lkc.h \
   menu.c \
 
-/home/curryking/tenonos_work/tenon-inference/build/kconfig/parser.tab.o: $(deps_/home/curryking/tenonos_work/tenon-inference/build/kconfig/parser.tab.o)
+/root/tenonos_works/tenon-inference/build/kconfig/parser.tab.o: $(deps_/root/tenonos_works/tenon-inference/build/kconfig/parser.tab.o)
 
-$(deps_/home/curryking/tenonos_work/tenon-inference/build/kconfig/parser.tab.o):
+$(deps_/root/tenonos_works/tenon-inference/build/kconfig/parser.tab.o):

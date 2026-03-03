@@ -1,5 +1,5 @@
 # Auto generated file. DO NOT EDIT
-source "/home/curryking/tenonos_work/tenon/drivers/tnsysclock/Config.uk"
-source "/home/curryking/tenonos_work/tenon/drivers/uktty/Config.uk"
-source "/home/curryking/tenonos_work/tenon/drivers/virtio/Config.uk"
-source "/home/curryking/tenonos_work/tenon/drivers/Config.uk"
+source "/root/tenonos_works/tenon/drivers/tnsysclock/Config.uk"
+source "/root/tenonos_works/tenon/drivers/uktty/Config.uk"
+source "/root/tenonos_works/tenon/drivers/virtio/Config.uk"
+source "/root/tenonos_works/tenon/drivers/Config.uk"

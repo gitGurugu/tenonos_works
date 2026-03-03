@@ -1,0 +1,13 @@
+menuconfig LIBCXX
+    bool "libcxx - C++ standard library"
+	select LIBNOLIBC if !HAVE_LIBC
+	select LIBCXXABI
+	select LIBUNWIND
+    default n
+
+if LIBCXX
+config CXX_THREADS
+    bool "Enable CXX threads support"
+    select LIBCXXABI_THREADS
+    default n
+endif

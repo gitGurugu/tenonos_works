@@ -1,0 +1,37 @@
+diff --git a/libcxxabi/src/cxa_guard_impl.h b/libcxxabi/src/cxa_guard_impl.h
+index 72940cc7e..822765d89 100644
+--- a/src/cxa_guard_impl.h
++++ b/src/cxa_guard_impl.h
+@@ -56,6 +56,7 @@
+ 
+ #include <limits.h>
+ #include <stdlib.h>
++#include <uk/syscall.h>
+ #include <__threading_support>
+ #ifndef _LIBCXXABI_HAS_NO_THREADS
+ #  if defined(__ELF__) && defined(_LIBCXXABI_LINK_PTHREAD_LIB)
+@@ -157,7 +158,7 @@ uint32_t PlatformThreadID() {
+ #elif defined(SYS_gettid) && defined(_LIBCPP_HAS_THREAD_API_PTHREAD)
+ uint32_t PlatformThreadID() {
+   static_assert(sizeof(pid_t) == sizeof(uint32_t), "");
+-  return static_cast<uint32_t>(syscall(SYS_gettid));
++  return static_cast<uint32_t>(uk_syscall_static(SYS_gettid));
+ }
+ #else
+ constexpr uint32_t (*PlatformThreadID)() = nullptr;
+@@ -410,13 +411,13 @@ private:
+ #if defined(SYS_futex)
+ void PlatformFutexWait(int* addr, int expect) {
+   constexpr int WAIT = 0;
+-  syscall(SYS_futex, addr, WAIT, expect, 0);
++  uk_syscall_static(SYS_futex, addr, WAIT, expect, 0);
+   __tsan_acquire(addr);
+ }
+ void PlatformFutexWake(int* addr) {
+   constexpr int WAKE = 1;
+   __tsan_release(addr);
+-  syscall(SYS_futex, addr, WAKE, INT_MAX);
++  uk_syscall_static(SYS_futex, addr, WAKE, INT_MAX);
+ }
+ #else
+ constexpr void (*PlatformFutexWait)(int*, int) = nullptr;
